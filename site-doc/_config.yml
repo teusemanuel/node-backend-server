@@ -27,6 +27,8 @@ github_username:  teusemanuel
 markdown: kramdown
 theme: jekyll-theme-cayman
 
+destination: ../docs
+
 #translate i18n
 languages: ["en", "pt"]
 exclude_from_localizations: ["javascript", "images", "css"]
