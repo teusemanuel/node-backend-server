@@ -1,0 +1,3 @@
+header:
+  title: Back-end Server Node Js with Typescript and Awesome Plugins
+  description: Creation of back end servers in Node Js using typescript, mysql, promisses, Dependency Inection (DI), cerialize and jsonwebtoken

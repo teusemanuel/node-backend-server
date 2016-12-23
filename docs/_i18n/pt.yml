@@ -1,0 +1,3 @@
+header:
+  title: Servidor back-end em  Node Js com Typescript e Incriveis Plugins
+  description: Criação de servidor back-end em Node Js utilizando ferramentas como typescript, mysql, promisses, Injeção de dependencia (DI), cerialize e jsonwebtoken
