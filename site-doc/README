@@ -1,0 +1,4 @@
+########## Run Docs ###########
+open /site-doc in terminal
+check if stay in site-doc with command: [pwd]
+if in site-doc: [execute bundle exec jekyll serve]
