@@ -8,7 +8,6 @@ import * as jwt from "jsonwebtoken";
 import {Service, Inject} from "typedi";
 import {ResultModel, ResultMessageModel} from "../commons/index";
 import {Configuration} from "../config";
-import {UserModel} from "../user/user.model";
 import {UserRepository, UserModel} from "../user/index";
 
 @Service()

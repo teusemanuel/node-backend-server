@@ -29,7 +29,7 @@ export class UserRepository  extends CommonsRepository<UserModel> {
         return super.findById(id, UserModel);
     }
 
-    public loginUser(email: string, password: string): Promise<Outcome<UserModel>> {
+    public loginUser(email: string, password: string): Promise<UserModel> {
         let sql = "SELECT u.* FROM user u where email = :email and password = :password";
         let params = {email: email, password: password};
         
