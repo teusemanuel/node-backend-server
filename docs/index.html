@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/node-backend-server/assets/css/style.css?v=f9c55fc3864e7293ab891669ef12b3764ff89c6b">
+    <link rel="stylesheet" href="/node-backend-server/assets/css/style.css?v=c8da54611498d1657c5d3c8f627200e44a3612c6">
 </head>
 <body>
 <section class="page-header">
@@ -53,18 +53,113 @@
         <p><code class="highlighter-rouge">$ npm install</code></p>
       </li>
       <li>
-        <p>in project root folder go to:</p>
+        <p>in project root folder install typings dependencies for working with typescript:</p>
 
-        <p><code class="highlighter-rouge">$ cd node_modules/typings</code></p>
-      </li>
-      <li>
-        <p>install typings dependencies for working with typescript</p>
-
-        <p><code class="highlighter-rouge">$ typings install</code></p>
+        <p><code class="highlighter-rouge">$ node_modules/.bin/typings install</code></p>
       </li>
     </ul>
   </li>
-  <li></li>
+  <li>
+    <p>Configure database for run fist time</p>
+
+    <ul>
+      <li>
+        <p>in <code class="highlighter-rouge">src/config.ts</code> have:</p>
+
+        <p><strong>host:</strong> <em>host of the your database</em></p>
+
+        <p><strong>user:</strong> <em>user for authentication in database with the necessary privileges</em></p>
+
+        <p><strong>password:</strong> <em>password utilised for user authentication in the database</em></p>
+
+        <p><strong>database_production:</strong> <em>database utilised when this server run in your production</em></p>
+
+        <p><strong>database_test:</strong> <em>database utilised when you developing your application</em></p>
+      </li>
+      <li>
+        <p>Initial script</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<div class="language-sql highlighter-rouge"><pre class="highlight"><code><span class="cm">/*
+ Source Server         : localhost
+ Source Server Type    : MySQL
+ Source Server Version : 50625
+ Source Host           : localhost
+ Source Database       : node_server_test
+	
+ Target Server Type    : MySQL
+ Target Server Version : 50625
+ File Encoding         : utf-8
+*/</span>
+	
+<span class="k">SET</span> <span class="k">NAMES</span> <span class="n">utf8</span><span class="p">;</span>
+<span class="k">SET</span> <span class="n">FOREIGN_KEY_CHECKS</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	
+<span class="c1">-- ----------------------------</span>
+<span class="c1">--  Table structure for `user`</span>
+<span class="c1">-- ----------------------------</span>
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="nv">`user`</span><span class="p">;</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`user`</span> <span class="p">(</span>
+  <span class="nv">`id`</span> <span class="n">bigint</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+  <span class="nv">`name`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="nv">`email`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="nv">`password`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="nv">`birthday`</span> <span class="n">date</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="nv">`photo_url`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="n">AUTO_INCREMENT</span><span class="o">=</span><span class="mi">2</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8</span><span class="p">;</span>
+	
+<span class="c1">-- ----------------------------</span>
+<span class="c1">--  Table structure for `user_provider`</span>
+<span class="c1">-- ----------------------------</span>
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="nv">`user_provider`</span><span class="p">;</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`user_provider`</span> <span class="p">(</span>
+  <span class="nv">`id`</span> <span class="n">bigint</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+  <span class="nv">`user_id`</span> <span class="n">bigint</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="nv">`user_token`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="nv">`display_name`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="nv">`email`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="nv">`photo_url`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="nv">`type`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="nv">`created_on`</span> <span class="n">datetime</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+  <span class="nv">`connected_at`</span> <span class="n">datetime</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
+  <span class="k">KEY</span> <span class="nv">`idx_user_id`</span> <span class="p">(</span><span class="nv">`user_id`</span><span class="p">),</span>
+  <span class="k">KEY</span> <span class="nv">`idx_id`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span> <span class="k">USING</span> <span class="n">BTREE</span><span class="p">,</span>
+  <span class="k">KEY</span> <span class="nv">`idx_type`</span> <span class="p">(</span><span class="nv">`type`</span><span class="p">),</span>
+  <span class="k">CONSTRAINT</span> <span class="nv">`fk_user_provider_user_id`</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`user_id`</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nv">`user`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8</span><span class="p">;</span>
+	
+<span class="k">SET</span> <span class="n">FOREIGN_KEY_CHECKS</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+</code></pre>
+</div>
+
+<ol>
+  <li>
+    <p>Configure your secret key utilized from when generate your secrete hash in login authentication.</p>
+
+    <ul>
+      <li>
+        <p>in <code class="highlighter-rouge">src/config.ts</code> change:</p>
+
+        <p><strong>secret:</strong> <em>key utilized from you application for generate a hash token</em> see more about <a href="https://github.com/auth0/node-jsonwebtoken" title="JsonWebToken from Node JS">Node-JsonWebToken</a> utilization.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Build project</p>
+
+    <p><code class="highlighter-rouge">$ npm run build</code></p>
+  </li>
+  <li>
+    <p>Run server</p>
+
+    <p><code class="highlighter-rouge">$ npm start</code></p>
+  </li>
 </ol>
 
 
