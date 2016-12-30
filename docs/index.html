@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/node-backend-server/assets/css/style.css?v=3134b790a4574709f2cd5b8ae2331d488f30bda5">
+    <link rel="stylesheet" href="/node-backend-server/assets/css/style.css?v=f7c1dc218310176f899aa3922215f8bda55fcccd">
 </head>
 <body>
 <section class="page-header">
@@ -22,7 +22,7 @@
 </section>
 
 <section class="main-content">
-    <p style="float: right;"><a href="pt/" alt="Change to Portuguese language"><img src="https://raw.githubusercontent.com/teusemanuel/node-backend-server/master/docs/images/br.png" alt="Change to Portuguese language"></a></p>
+    <p style="float: right;"><a href="pt/" alt="Change to Portuguese language" title="Change to Portuguese language"><img src="https://raw.githubusercontent.com/teusemanuel/node-backend-server/master/docs/images/br.png" alt="Change to Portuguese language"></a></p>
     <h1 id="use-existing-server-created-with-example">Use existing server created with example</h1>
 
 <h2 id="configuration-steps">Configuration Steps:</h2>
@@ -35,21 +35,21 @@
     <p>Install <a href="http://dev.mysql.com/downloads/mysql/" title="MySQL Database">MySQL</a> to persist data.</p>
   </li>
   <li>
-    <p>Check-out project</p>
+    <p>Download the server to your computer</p>
 
     <p><code class="highlighter-rouge">$ git clone https://github.com/teusemanuel/node-backend-server.git</code></p>
   </li>
   <li>
-    <p>Checkout of project dependencies in command-line</p>
+    <p>Download the dependencies that the project requires from the command line</p>
 
     <ul>
       <li>
-        <p>go to node-backend-server checkout folder</p>
+        <p>Enter the server folder node-backend-server downloaded:</p>
 
         <p><code class="highlighter-rouge">$ cd ~/folder-checkout</code></p>
       </li>
       <li>
-        <p>install dependencies</p>
+        <p>install dependencies:</p>
 
         <p><code class="highlighter-rouge">$ npm install</code></p>
       </li>
@@ -61,11 +61,11 @@
     </ul>
   </li>
   <li>
-    <p>Configure database for run fist time</p>
+    <p>Configure database for run first time</p>
 
     <ul>
       <li>
-        <p>in <code class="highlighter-rouge">src/config.ts</code> have:</p>
+        <p>in file <code class="highlighter-rouge">src/config.ts</code> have:</p>
 
         <p><strong>host:</strong> <em>host of the your database</em></p>
 
@@ -73,12 +73,12 @@
 
         <p><strong>password:</strong> <em>password utilised for user authentication in the database</em></p>
 
-        <p><strong>database_production:</strong> <em>database utilised when this server run in your production</em></p>
+        <p><strong>database_production:</strong> <em>database name utilised when this server run in your production</em></p>
 
-        <p><strong>database_test:</strong> <em>database utilised when you developing your application</em></p>
+        <p><strong>database_test:</strong> <em>database name utilised when you developing your application</em></p>
       </li>
       <li>
-        <p>Initial script</p>
+        <p>Initial script (Run in database you created)</p>
       </li>
     </ul>
   </li>
@@ -141,13 +141,13 @@
 
 <ol>
   <li>
-    <p>Configure your secret key utilized from when generate your secrete hash in login authentication.</p>
+    <p>Configure your secret key used to generate the hash for your authentication with the application.</p>
 
     <ul>
       <li>
-        <p>in <code class="highlighter-rouge">src/config.ts</code> change:</p>
+        <p>in file <code class="highlighter-rouge">src/config.ts</code> change:</p>
 
-        <p><strong>secret:</strong> <em>key utilized from you application for generate a hash token</em> see more about <a href="https://github.com/auth0/node-jsonwebtoken" title="JsonWebToken from Node JS">Node-JsonWebToken</a> utilization.</p>
+        <p><strong>secret:</strong> key utilized from you application for generate a hash token. see more about <a href="https://github.com/auth0/node-jsonwebtoken" title="JsonWebToken from Node JS">Node-JsonWebToken</a> utilization.</p>
       </li>
     </ul>
   </li>

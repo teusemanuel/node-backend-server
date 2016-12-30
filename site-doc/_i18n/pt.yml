@@ -7,5 +7,30 @@ header:
 
 index:
   useExistentStep: Usar servidor existente criado com o exemplo
-  confSteps: Etapas para configuração
-  confStep1: Install [Node JS](https://nodejs.org/en/ "Node Js"). Node itself is just an executable, so you don’t really need to install it, but doing so will be easier and will install the node package manager (npm) as well.
+  confSteps:
+    title: Etapas para configuração
+    step1: Instale [Node JS](https://nodejs.org/en/ "Node Js"). O próprio Node é apenas um executável, então você realmente não precisa instalá-lo, mas fazê-lo será mais fácil e irá instalar o gerenciador de pacotes do node (npm) também.
+    step2: Instale [MySQL](http://dev.mysql.com/downloads/mysql/ "MySQL Database") para salvar os dados do seu server.
+    step3: Baixe o servidor para seu computador
+    step4:
+      title: Baixe as dependências que o projeto necessita pela linha de comando
+      sub_0: Entre na pasta do servidor node-backend-server baixado
+      sub_1: Instalar dependências
+      sub_2: Na pasta raiz do projeto instala dependências do typings para trabalhar com typescript
+    step5:
+      title: Configurar banco de dados para executar pela primeira vez
+      sub_0:
+        title: no arquivo `src/config.ts` tem
+        host: host do seu base de dados
+        user: Usuário para autenticação no banco de dados com os privilégios necessários
+        password: Senha utilizada para autenticação do usuário no banco de dados
+        database_production: Nome do banco de dados utilizado quando este servidor é executado em produção
+        database_test: Nome do banco de dados utilizado ao desenvolver o aplicativo
+      sub_1: Script inicial (Executar no banco de dados que você criou)
+    step6:
+      title: Configure a sua chave secreta utilizada para gerar o hash para a sua autenticação com a aplicação.
+      sub_0:
+        title: no arquivo `src/config.ts` altere
+        secret: Chave usada de sua aplicação para gerar o hash token. Veja mais sobre como utilizar [Node-JsonWebToken](https://github.com/auth0/node-jsonwebtoken "JsonWebToken para Node JS").
+    step7: Compilar projeto
+    step8: Iniciar servidor

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/node-backend-server/pt/assets/css/style.css?v=3134b790a4574709f2cd5b8ae2331d488f30bda5">
+    <link rel="stylesheet" href="/node-backend-server/pt/assets/css/style.css?v=f7c1dc218310176f899aa3922215f8bda55fcccd">
 </head>
 <body>
 <section class="page-header">
@@ -22,63 +22,63 @@
 </section>
 
 <section class="main-content">
-    <p style="float: right;"><a href="/node-backend-server/" alt="Mudar para o idioma ingles"><img src="https://raw.githubusercontent.com/teusemanuel/node-backend-server/master/docs/images/us.png" alt="Mudar para o idioma ingles"></a></p>
+    <p style="float: right;"><a href="/node-backend-server/" alt="Mudar para o idioma ingles" title="Mudar para o idioma ingles"><img src="https://raw.githubusercontent.com/teusemanuel/node-backend-server/master/docs/images/us.png" alt="Mudar para o idioma ingles"></a></p>
     <h1 id="usar-servidor-existente-criado-com-o-exemplo">Usar servidor existente criado com o exemplo</h1>
 
 <h2 id="etapas-para-configurao">Etapas para configuração:</h2>
 
 <ol>
   <li>
-    <p>Install <a href="https://nodejs.org/en/" title="Node Js">Node JS</a>. Node itself is just an executable, so you don’t really need to install it, but doing so will be easier and will install the node package manager (npm) as well.</p>
+    <p>Instale <a href="https://nodejs.org/en/" title="Node Js">Node JS</a>. O próprio Node é apenas um executável, então você realmente não precisa instalá-lo, mas fazê-lo será mais fácil e irá instalar o gerenciador de pacotes do node (npm) também.</p>
   </li>
   <li>
-    <p>Install <a href="http://dev.mysql.com/downloads/mysql/" title="MySQL Database">MySQL</a> to persist data.</p>
+    <p>Instale <a href="http://dev.mysql.com/downloads/mysql/" title="MySQL Database">MySQL</a> para salvar os dados do seu server.</p>
   </li>
   <li>
-    <p>Check-out project</p>
+    <p>Baixe o servidor para seu computador</p>
 
     <p><code class="highlighter-rouge">$ git clone https://github.com/teusemanuel/node-backend-server.git</code></p>
   </li>
   <li>
-    <p>Checkout of project dependencies in command-line</p>
+    <p>Baixe as dependências que o projeto necessita pela linha de comando</p>
 
     <ul>
       <li>
-        <p>go to node-backend-server checkout folder</p>
+        <p>Entre na pasta do servidor node-backend-server baixado:</p>
 
         <p><code class="highlighter-rouge">$ cd ~/folder-checkout</code></p>
       </li>
       <li>
-        <p>install dependencies</p>
+        <p>Instalar dependências:</p>
 
         <p><code class="highlighter-rouge">$ npm install</code></p>
       </li>
       <li>
-        <p>in project root folder install typings dependencies for working with typescript:</p>
+        <p>Na pasta raiz do projeto instala dependências do typings para trabalhar com typescript:</p>
 
         <p><code class="highlighter-rouge">$ node_modules/.bin/typings install</code></p>
       </li>
     </ul>
   </li>
   <li>
-    <p>Configure database for run fist time</p>
+    <p>Configurar banco de dados para executar pela primeira vez</p>
 
     <ul>
       <li>
-        <p>in <code class="highlighter-rouge">src/config.ts</code> have:</p>
+        <p>no arquivo <code class="highlighter-rouge">src/config.ts</code> tem:</p>
 
-        <p><strong>host:</strong> <em>host of the your database</em></p>
+        <p><strong>host:</strong> <em>host do seu base de dados</em></p>
 
-        <p><strong>user:</strong> <em>user for authentication in database with the necessary privileges</em></p>
+        <p><strong>user:</strong> <em>Usuário para autenticação no banco de dados com os privilégios necessários</em></p>
 
-        <p><strong>password:</strong> <em>password utilised for user authentication in the database</em></p>
+        <p><strong>password:</strong> <em>Senha utilizada para autenticação do usuário no banco de dados</em></p>
 
-        <p><strong>database_production:</strong> <em>database utilised when this server run in your production</em></p>
+        <p><strong>database_production:</strong> <em>Nome do banco de dados utilizado quando este servidor é executado em produção</em></p>
 
-        <p><strong>database_test:</strong> <em>database utilised when you developing your application</em></p>
+        <p><strong>database_test:</strong> <em>Nome do banco de dados utilizado ao desenvolver o aplicativo</em></p>
       </li>
       <li>
-        <p>Initial script</p>
+        <p>Script inicial (Executar no banco de dados que você criou)</p>
       </li>
     </ul>
   </li>
@@ -141,23 +141,23 @@
 
 <ol>
   <li>
-    <p>Configure your secret key utilized from when generate your secrete hash in login authentication.</p>
+    <p>Configure a sua chave secreta utilizada para gerar o hash para a sua autenticação com a aplicação.</p>
 
     <ul>
       <li>
-        <p>in <code class="highlighter-rouge">src/config.ts</code> change:</p>
+        <p>no arquivo <code class="highlighter-rouge">src/config.ts</code> altere:</p>
 
-        <p><strong>secret:</strong> <em>key utilized from you application for generate a hash token</em> see more about <a href="https://github.com/auth0/node-jsonwebtoken" title="JsonWebToken from Node JS">Node-JsonWebToken</a> utilization.</p>
+        <p><strong>secret:</strong> Chave usada de sua aplicação para gerar o hash token. Veja mais sobre como utilizar <a href="https://github.com/auth0/node-jsonwebtoken" title="JsonWebToken para Node JS">Node-JsonWebToken</a>.</p>
       </li>
     </ul>
   </li>
   <li>
-    <p>Build project</p>
+    <p>Compilar projeto</p>
 
     <p><code class="highlighter-rouge">$ npm run build</code></p>
   </li>
   <li>
-    <p>Run server</p>
+    <p>Iniciar servidor</p>
 
     <p><code class="highlighter-rouge">$ npm start</code></p>
   </li>

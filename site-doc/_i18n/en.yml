@@ -7,5 +7,30 @@ header:
 
 index:
   useExistentStep: Use existing server created with example
-  confSteps: Configuration Steps
-  confStep1: Install [Node JS](https://nodejs.org/en/ "Node Js"). Node itself is just an executable, so you don’t really need to install it, but doing so will be easier and will install the node package manager (npm) as well.
+  confSteps:
+    title: Configuration Steps
+    step1: Install [Node JS](https://nodejs.org/en/ "Node Js"). Node itself is just an executable, so you don’t really need to install it, but doing so will be easier and will install the node package manager (npm) as well.
+    step2: Install [MySQL](http://dev.mysql.com/downloads/mysql/ "MySQL Database") to persist data.
+    step3: Download the server to your computer
+    step4:
+      title: Download the dependencies that the project requires from the command line
+      sub_0: Enter the server folder node-backend-server downloaded
+      sub_1: install dependencies
+      sub_2: in project root folder install typings dependencies for working with typescript
+    step5:
+      title: Configure database for run first time
+      sub_0:
+        title: in file `src/config.ts` have
+        host: host of the your database
+        user: user for authentication in database with the necessary privileges
+        password: password utilised for user authentication in the database
+        database_production: database name utilised when this server run in your production
+        database_test: database name utilised when you developing your application
+      sub_1: Initial script (Run in database you created)
+    step6:
+      title: Configure your secret key used to generate the hash for your authentication with the application.
+      sub_0:
+        title: in file `src/config.ts` change
+        secret: key utilized from you application for generate a hash token. see more about [Node-JsonWebToken](https://github.com/auth0/node-jsonwebtoken "JsonWebToken from Node JS") utilization.
+    step7: Build project
+    step8: Run server

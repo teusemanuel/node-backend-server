@@ -9,45 +9,45 @@ languageLink: header.languageLink
 # {% t index.useExistentStep %}
 
 
-## {% t index.confSteps %}:
+## {% t index.confSteps.title %}:
 
-1. {% t index.confStep1 %}
+1. {% t index.confSteps.step1 %}
 
-2. Install [MySQL](http://dev.mysql.com/downloads/mysql/ "MySQL Database") to persist data.
+2. {% t index.confSteps.step2 %}
 
-3. Check-out project
+3. {% t index.confSteps.step3 %}
 
 	```$ git clone https://github.com/teusemanuel/node-backend-server.git```
 	
-4. Checkout of project dependencies in command-line
+4. {% t index.confSteps.step4.title %}
 
-	* go to node-backend-server checkout folder 
+	* {% t index.confSteps.step4.sub_0 %}:
 		
 		`$ cd ~/folder-checkout` 
 		
-	* install dependencies 
+	* {% t index.confSteps.step4.sub_1 %}:
 
 		`$ npm install` 
 		
-	* in project root folder install typings dependencies for working with typescript:
-	
-		`$ node_modules/.bin/typings install`
+	* {% t index.confSteps.step4.sub_2 %}:
 
-5. Configure database for run fist time
+	    `$ node_modules/.bin/typings install`
 
-	* in `src/config.ts` have:
+5. {% t index.confSteps.step5.title %}
+
+	* {% t index.confSteps.step5.sub_0.title %}:
 		
-		**host:** *host of the your database*
+		**host:** *{% t index.confSteps.step5.sub_0.host %}*
 		
-		**user:** *user for authentication in database with the necessary privileges*
+		**user:** *{% t index.confSteps.step5.sub_0.user %}*
 		
-		**password:** *password utilised for user authentication in the database*
+		**password:** *{% t index.confSteps.step5.sub_0.password %}*
 		
-		**database_production:** *database utilised when this server run in your production*
+		**database_production:** *{% t index.confSteps.step5.sub_0.database_production %}*
 		
-		**database_test:** *database utilised when you developing your application*
+		**database_test:** *{% t index.confSteps.step5.sub_0.database_test %}*
 		
-	* Initial script
+	* {% t index.confSteps.step5.sub_1 %}
 
 ```sql
 /*
@@ -104,17 +104,17 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 ```
 
-5. Configure your secret key utilized from when generate your secrete hash in login authentication.
+6. {% t index.confSteps.step6.title %}
 
-	* in `src/config.ts` change:
+	* {% t index.confSteps.step6.sub_0.title %}:
 		
-		**secret:** *key utilized from you application for generate a hash token* see more about [Node-JsonWebToken](https://github.com/auth0/node-jsonwebtoken "JsonWebToken from Node JS") utilization.
+		**secret:** {% t index.confSteps.step6.sub_0.secret %}
 
-6. Build project
+7. {% t index.confSteps.step7 %}
 
 	`$ npm run build`
 	
-7. Run server
+8. {% t index.confSteps.step8 %}
 
 	`$ npm start`
 
