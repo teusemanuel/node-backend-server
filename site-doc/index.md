@@ -2,15 +2,16 @@
 layout: default
 title: header.title
 description: header.description
+languageLink: header.languageLink
 
 ---
 
 # {% t index.useExistentStep %}
 
 
-## Steps:
+## {% t index.confSteps %}:
 
-1. Install [Node JS](https://nodejs.org/en/ "Node Js"). Node itself is just an executable, so you don’t really need to install it, but doing so will be easier and will install the node package manager (npm) as well.
+1. {% t index.confStep1 %}
 
 2. Install [MySQL](http://dev.mysql.com/downloads/mysql/ "MySQL Database") to persist data.
 
@@ -116,3 +117,5 @@ SET FOREIGN_KEY_CHECKS = 1;
 7. Run server
 
 	`$ npm start`
+
+## Test Requests in app

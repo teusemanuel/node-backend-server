@@ -1,6 +1,11 @@
 header:
   title: Back-end Server Node Js with Typescript and Awesome Plugins
   description: Creation of back end servers in Node Js using typescript, mysql, promisses, Dependency Inection (DI), cerialize and jsonwebtoken
+  languageImg: https://raw.githubusercontent.com/teusemanuel/node-backend-server/master/docs/images/br.png
+  languageAlt: Change to Portuguese language
+  languageLink: pt/
 
 index:
   useExistentStep: Use existing server created with example
+  confSteps: Configuration Steps
+  confStep1: Install [Node JS](https://nodejs.org/en/ "Node Js"). Node itself is just an executable, so you don’t really need to install it, but doing so will be easier and will install the node package manager (npm) as well.

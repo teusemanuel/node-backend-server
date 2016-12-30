@@ -1,6 +1,11 @@
 header:
   title: Servidor back-end em  Node Js com Typescript e Incriveis Plugins
   description: Criação de servidor back-end em Node Js utilizando ferramentas como typescript, mysql, promisses, Injeção de dependencia (DI), cerialize e jsonwebtoken
+  languageImg: https://raw.githubusercontent.com/teusemanuel/node-backend-server/master/docs/images/us.png
+  languageAlt: Mudar para o idioma ingles
+  languageLink: /node-backend-server/
 
 index:
   useExistentStep: Usar servidor existente criado com o exemplo
+  confSteps: Etapas para configuração
+  confStep1: Install [Node JS](https://nodejs.org/en/ "Node Js"). Node itself is just an executable, so you don’t really need to install it, but doing so will be easier and will install the node package manager (npm) as well.
