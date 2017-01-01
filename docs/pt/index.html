@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/node-backend-server/pt/assets/css/style.css?v=f7c1dc218310176f899aa3922215f8bda55fcccd">
+    <link rel="stylesheet" href="/node-backend-server/pt/assets/css/style.css?v=d8bb9d58df22bd098e59d3166e1c551f5ea4fedd">
 </head>
 <body>
 <section class="page-header">
@@ -22,8 +22,22 @@
 </section>
 
 <section class="main-content">
-    <p style="float: right;"><a href="/node-backend-server/" alt="Mudar para o idioma ingles" title="Mudar para o idioma ingles"><img src="https://raw.githubusercontent.com/teusemanuel/node-backend-server/master/docs/images/us.png" alt="Mudar para o idioma ingles"></a></p>
+    <p style="float: right;"><a href="/node-backend-server/" alt="Mudar para o idioma ingles" title="Mudar para o idioma ingles"><img src="/node-backend-server/images/us.png" alt="Mudar para o idioma ingles" style="width: 30px;"></a></p>
     <h1 id="usar-servidor-existente-criado-com-o-exemplo">Usar servidor existente criado com o exemplo</h1>
+
+<h2 id="ndice">Índice</h2>
+<ul>
+  <li><a href="#etapas-para-configurao">1. Etapas para configuração</a></li>
+  <li><a href="#teste-de-requisies-ao-aplicativo">2. Teste de requisições ao aplicativo</a></li>
+  <li><a href="#componentes">3. Componentes</a></li>
+  <li><a href="#estrutura-do-codigo">4. Estrutura do codigo</a></li>
+  <li><a href="#linhas-guia-para-o-deselvolvimento">5. Linhas guia para o deselvolvimento</a></li>
+  <li><a href="#scripts">6. Scripts</a>
+    <ul>
+      <li><a href="#usuario-e-provedores">6.1 Usuario e provedores</a></li>
+    </ul>
+  </li>
+</ul>
 
 <h2 id="etapas-para-configurao">Etapas para configuração:</h2>
 
@@ -79,67 +93,11 @@
       </li>
       <li>
         <p>Script inicial (Executar no banco de dados que você criou)</p>
+
+        <p>Ir para o <a href="#user-and-providers">script</a></p>
       </li>
     </ul>
   </li>
-</ol>
-
-<div class="language-sql highlighter-rouge"><pre class="highlight"><code><span class="cm">/*
- Source Server         : localhost
- Source Server Type    : MySQL
- Source Server Version : 50625
- Source Host           : localhost
- Source Database       : node_server_test
-	
- Target Server Type    : MySQL
- Target Server Version : 50625
- File Encoding         : utf-8
-*/</span>
-	
-<span class="k">SET</span> <span class="k">NAMES</span> <span class="n">utf8</span><span class="p">;</span>
-<span class="k">SET</span> <span class="n">FOREIGN_KEY_CHECKS</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-	
-<span class="c1">-- ----------------------------</span>
-<span class="c1">--  Table structure for `user`</span>
-<span class="c1">-- ----------------------------</span>
-<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="nv">`user`</span><span class="p">;</span>
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`user`</span> <span class="p">(</span>
-  <span class="nv">`id`</span> <span class="n">bigint</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-  <span class="nv">`name`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-  <span class="nv">`email`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-  <span class="nv">`password`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-  <span class="nv">`birthday`</span> <span class="n">date</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-  <span class="nv">`photo_url`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span>
-<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="n">AUTO_INCREMENT</span><span class="o">=</span><span class="mi">2</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8</span><span class="p">;</span>
-	
-<span class="c1">-- ----------------------------</span>
-<span class="c1">--  Table structure for `user_provider`</span>
-<span class="c1">-- ----------------------------</span>
-<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="nv">`user_provider`</span><span class="p">;</span>
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nv">`user_provider`</span> <span class="p">(</span>
-  <span class="nv">`id`</span> <span class="n">bigint</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-  <span class="nv">`user_id`</span> <span class="n">bigint</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-  <span class="nv">`user_token`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-  <span class="nv">`display_name`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-  <span class="nv">`email`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-  <span class="nv">`photo_url`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-  <span class="nv">`type`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-  <span class="nv">`created_on`</span> <span class="n">datetime</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-  <span class="nv">`connected_at`</span> <span class="n">datetime</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">),</span>
-  <span class="k">KEY</span> <span class="nv">`idx_user_id`</span> <span class="p">(</span><span class="nv">`user_id`</span><span class="p">),</span>
-  <span class="k">KEY</span> <span class="nv">`idx_id`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span> <span class="k">USING</span> <span class="n">BTREE</span><span class="p">,</span>
-  <span class="k">KEY</span> <span class="nv">`idx_type`</span> <span class="p">(</span><span class="nv">`type`</span><span class="p">),</span>
-  <span class="k">CONSTRAINT</span> <span class="nv">`fk_user_provider_user_id`</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="nv">`user_id`</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nv">`user`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">)</span>
-<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8</span><span class="p">;</span>
-	
-<span class="k">SET</span> <span class="n">FOREIGN_KEY_CHECKS</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-
-</code></pre>
-</div>
-
-<ol>
   <li>
     <p>Configure a sua chave secreta utilizada para gerar o hash para a sua autenticação com a aplicação.</p>
 
@@ -163,7 +121,73 @@
   </li>
 </ol>
 
-<h2 id="test-requests-in-app">Test Requests in app</h2>
+<h2 id="componentes">Componentes</h2>
+
+<h2 id="estrutura-do-codigo">Estrutura do codigo</h2>
+
+<h2 id="linhas-guia-para-o-deselvolvimento">Linhas guia para o deselvolvimento</h2>
+
+<h2 id="teste-de-requisies-ao-aplicativo">Teste de requisições ao aplicativo</h2>
+
+<h2 id="scripts">Scripts</h2>
+
+<h4 id="usuario-e-provedores">Usuario e provedores</h4>
+
+<div class="language-sql highlighter-rouge"><pre class="highlight"><code>
+<span class="cm">/*
+ Source Server         : localhost
+ Source Server Type    : MySQL
+ Source Server Version : 50625
+ Source Host           : localhost
+ Source Database       : node_server_test
+
+ Target Server Type    : MySQL
+ Target Server Version : 50625
+ File Encoding         : utf-8
+*/</span>
+
+<span class="k">SET</span> <span class="k">NAMES</span> <span class="n">utf8</span><span class="p">;</span>
+<span class="k">SET</span> <span class="n">FOREIGN_KEY_CHECKS</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="c1">-- ----------------------------</span>
+<span class="c1">--  Table structure for user</span>
+<span class="c1">-- ----------------------------</span>
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="k">user</span><span class="p">;</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">user</span> <span class="p">(</span>
+  <span class="n">id</span> <span class="n">bigint</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+  <span class="n">name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="n">email</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="n">password</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="n">birthday</span> <span class="n">date</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="n">photo_url</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="n">AUTO_INCREMENT</span><span class="o">=</span><span class="mi">2</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8</span><span class="p">;</span>
+
+<span class="c1">-- ----------------------------</span>
+<span class="c1">--  Table structure for user_provider</span>
+<span class="c1">-- ----------------------------</span>
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="n">user_provider</span><span class="p">;</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">user_provider</span> <span class="p">(</span>
+  <span class="n">id</span> <span class="n">bigint</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+  <span class="n">user_id</span> <span class="n">bigint</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="n">user_token</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="n">display_name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="n">email</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="n">photo_url</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="k">type</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="n">created_on</span> <span class="n">datetime</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+  <span class="n">connected_at</span> <span class="n">datetime</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span> <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">id</span><span class="p">),</span>
+  <span class="k">KEY</span> <span class="n">idx_user_id</span> <span class="p">(</span><span class="n">user_id</span><span class="p">),</span>
+  <span class="k">KEY</span> <span class="n">idx_id</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="k">USING</span> <span class="n">BTREE</span><span class="p">,</span>
+  <span class="k">KEY</span> <span class="n">idx_type</span> <span class="p">(</span><span class="k">type</span><span class="p">),</span>
+  <span class="k">CONSTRAINT</span> <span class="n">fk_user_provider_user_id</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">user_id</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="k">user</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8</span><span class="p">;</span>
+
+<span class="k">SET</span> <span class="n">FOREIGN_KEY_CHECKS</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+</code></pre>
+</div>
 
 
     <footer class="site-footer">

@@ -1,14 +1,18 @@
 header:
   title: Servidor back-end em  Node Js com Typescript e Incriveis Plugins
   description: Criação de servidor back-end em Node Js utilizando ferramentas como typescript, mysql, promisses, Injeção de dependencia (DI), cerialize e jsonwebtoken
-  languageImg: https://raw.githubusercontent.com/teusemanuel/node-backend-server/master/docs/images/us.png
+  languageImg: /node-backend-server/images/us.png
   languageAlt: Mudar para o idioma ingles
   languageLink: /node-backend-server/
 
 index:
   useExistentStep: Usar servidor existente criado com o exemplo
+  contents: Índice
+
+
   confSteps:
     title: Etapas para configuração
+    titleId: etapas-para-configurao
     step1: Instale [Node JS](https://nodejs.org/en/ "Node Js"). O próprio Node é apenas um executável, então você realmente não precisa instalá-lo, mas fazê-lo será mais fácil e irá instalar o gerenciador de pacotes do node (npm) também.
     step2: Instale [MySQL](http://dev.mysql.com/downloads/mysql/ "MySQL Database") para salvar os dados do seu server.
     step3: Baixe o servidor para seu computador
@@ -26,7 +30,9 @@ index:
         password: Senha utilizada para autenticação do usuário no banco de dados
         database_production: Nome do banco de dados utilizado quando este servidor é executado em produção
         database_test: Nome do banco de dados utilizado ao desenvolver o aplicativo
-      sub_1: Script inicial (Executar no banco de dados que você criou)
+      sub_1:
+        title: Script inicial (Executar no banco de dados que você criou)
+        link: Ir para o [script](#user-and-providers)
     step6:
       title: Configure a sua chave secreta utilizada para gerar o hash para a sua autenticação com a aplicação.
       sub_0:
@@ -34,3 +40,30 @@ index:
         secret: Chave usada de sua aplicação para gerar o hash token. Veja mais sobre como utilizar [Node-JsonWebToken](https://github.com/auth0/node-jsonwebtoken "JsonWebToken para Node JS").
     step7: Compilar projeto
     step8: Iniciar servidor
+
+
+  components:
+   title: Componentes
+   titleId: componentes
+
+
+  codeStructure:
+   title: Estrutura do codigo
+   titleId: estrutura-do-codigo
+
+
+  guidelines:
+   title: Linhas guia para o deselvolvimento
+   titleId: linhas-guia-para-o-deselvolvimento
+
+
+  requestsInApp:
+    title: Teste de requisições ao aplicativo
+    titleId: teste-de-requisies-ao-aplicativo
+
+
+  scripts:
+    title: Scripts
+    titleId: scripts
+    userAndProviders: Usuario e provedores
+    userAndProvidersId: usuario-e-provedores

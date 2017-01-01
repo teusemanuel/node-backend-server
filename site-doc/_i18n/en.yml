@@ -1,14 +1,18 @@
 header:
   title: Back-end Server Node Js with Typescript and Awesome Plugins
   description: Creation of back end servers in Node Js using typescript, mysql, promisses, Dependency Inection (DI), cerialize and jsonwebtoken
-  languageImg: https://raw.githubusercontent.com/teusemanuel/node-backend-server/master/docs/images/br.png
+  languageImg: /node-backend-server/images/br.png
   languageAlt: Change to Portuguese language
   languageLink: pt/
 
 index:
   useExistentStep: Use existing server created with example
+  contents: Table of Contents
+
+
   confSteps:
     title: Configuration Steps
+    titleId: configuration-steps
     step1: Install [Node JS](https://nodejs.org/en/ "Node Js"). Node itself is just an executable, so you don’t really need to install it, but doing so will be easier and will install the node package manager (npm) as well.
     step2: Install [MySQL](http://dev.mysql.com/downloads/mysql/ "MySQL Database") to persist data.
     step3: Download the server to your computer
@@ -26,7 +30,9 @@ index:
         password: password utilised for user authentication in the database
         database_production: database name utilised when this server run in your production
         database_test: database name utilised when you developing your application
-      sub_1: Initial script (Run in database you created)
+      sub_1:
+        title: Initial script (Run in database you created)
+        link: Go to [script](#user-and-providers)
     step6:
       title: Configure your secret key used to generate the hash for your authentication with the application.
       sub_0:
@@ -34,3 +40,30 @@ index:
         secret: key utilized from you application for generate a hash token. see more about [Node-JsonWebToken](https://github.com/auth0/node-jsonwebtoken "JsonWebToken from Node JS") utilization.
     step7: Build project
     step8: Run server
+
+
+  components:
+   title: Components
+   titleId: components
+
+
+  codeStructure:
+   title: Code Structure
+   titleId: code-structure
+
+
+  guidelines:
+   title: Guidelines
+   titleId: guidelines
+
+
+  requestsInApp:
+    title: Test Requests in app
+    titleId: test-requests-in-app
+
+
+  scripts:
+    title: Scripts
+    titleId: scripts
+    userAndProviders: User and Providers
+    userAndProvidersId: user-and-providers
