@@ -75,8 +75,16 @@ languageLink: header.languageLink
 	`$ npm start`
 
 ## {% t index.components.title %}
+{% t index.components.description %}
+
+{% t index.components.utils.title %}
+
+| {% t index.components.tableClass %} | {% t index.components.tableDescription %} | {% t index.components.tableUsage %} |
+| ----------------------------------  | ----------------------------------------- | ----------------------------------- |
+| {% t index.components.utils.row_0.col_0 %} | {% t index.components.utils.row_0.col_1 %} | `DateUtils.dateTextFromDate()` |
 
 ## {% t index.codeStructure.title %}
+{% t index.codeStructure.description %}
 
 ## {% t index.guidelines.title %}
 

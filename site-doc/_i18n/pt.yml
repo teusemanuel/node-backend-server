@@ -45,11 +45,21 @@ index:
   components:
    title: Componentes
    titleId: componentes
+   description: Componentes utilitarios para auxiliar durante a criação das regras de negocio do seu servidor
+   tableClass: Classe
+   tableDescription: Descrição
+   tableUsage: Exemplo de uso
+   utils:
+    title: Utilitarios
+    row_0:
+      col_0: DateUtils
+      col_1: DateUtils não é apenas simplificar o código para operações comuns, mas isolar a dependência do momento.
 
 
   codeStructure:
    title: Estrutura do codigo
    titleId: estrutura-do-codigo
+   description: Aqui descreveremos como foi feita a convensão de codigo, praticas recomendadas e utilizadas na criação do servidor. <br /><br />O Objetivo aqui é apresentar como foi feita a estrutura do servidor para facilitar a manutenção e criação de novas funcionalidades e modulos
 
 
   guidelines:
