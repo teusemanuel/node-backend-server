@@ -11,10 +11,10 @@ languageLink: header.languageLink
 {% t index.contents %}
 -----------------
 * [1\. {% t index.confSteps.title %}](#{% t index.confSteps.titleId %})
-* [2\. {% t index.requestsInApp.title %}](#{% t index.requestsInApp.titleId %})
-* [3\. {% t index.components.title %}](#{% t index.components.titleId %})
-* [4\. {% t index.codeStructure.title %}](#{% t index.codeStructure.titleId %})
-* [5\. {% t index.guidelines.title %}](#{% t index.guidelines.titleId %})
+* [2\. {% t index.components.title %}](#{% t index.components.titleId %})
+* [3\. {% t index.codeStructure.title %}](#{% t index.codeStructure.titleId %})
+* [4\. {% t index.guidelines.title %}](#{% t index.guidelines.titleId %})
+* [5\. {% t index.requestsInApp.title %}](#{% t index.requestsInApp.titleId %})
 * [6\. {% t index.scripts.title %}](#{% t index.scripts.titleId %})
     * [6\.1 {% t index.scripts.userAndProviders %}](#{% t index.scripts.userAndProvidersId %})
 
