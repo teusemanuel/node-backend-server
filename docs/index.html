@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/node-backend-server/assets/css/style.css?v=6e9ea18992528aed423a25353980030e6c5aa27a">
+    <link rel="stylesheet" href="/node-backend-server/assets/css/style.css?v=06292e7797237957ee51eb47cea083558af47624">
 </head>
 <body>
 <section class="page-header">
@@ -142,8 +142,8 @@
     </tr>
     <tr>
       <td>CommonsRepository</td>
-      <td>CommonsRepository is not only simplify code for common operations, but isolate from of the moment dependence.</td>
-      <td>Example:<br /> <code class="highlighter-rouge">@Service()</code><br /><code class="highlighter-rouge">...UserRepository extends CommonsRepository&lt;UserModel&gt; {...}</code><br /><br /><code class="highlighter-rouge">let user = new UserModel();</code><br /><br /><code class="highlighter-rouge">userRepository.findById(user.id, UserModel)</code><br /><code class="highlighter-rouge">userRepository.save(user)</code><br /><code class="highlighter-rouge">userRepository.update(user, {id: user.id})</code><br /><code class="highlighter-rouge">userRepository.deleteById(user.id)</code></td>
+      <td>CommonsRepository Is a utility class that can be extended by all classes that work with data persistence.</td>
+      <td>Example:<br /> <code class="highlighter-rouge">...UserRepository extends CommonsRepository&lt;UserModel&gt; {...}</code><br /><br /><code class="highlighter-rouge">let user = new UserModel();</code><br /><br /><code class="highlighter-rouge">userRepository.findById(user.id, UserModel)</code><br /><code class="highlighter-rouge">userRepository.save(user)</code><br /><code class="highlighter-rouge">userRepository.update(user, {id: user.id})</code><br /><code class="highlighter-rouge">userRepository.deleteById(user.id)</code></td>
     </tr>
   </tbody>
 </table>

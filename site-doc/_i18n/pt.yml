@@ -56,7 +56,7 @@ index:
       col_1: DateUtils não é apenas simplificar o código para operações comuns, mas isolar a dependência do moment.
     row_1:
       col_0: CommonsRepository
-      col_1: CommonsRepository é uma classe utilitaria que pode ser utilizada por todas as classes que trabalham com persistencia de dados.
+      col_1: CommonsRepository é uma classe utilitaria que pode ser estendida por todas as classes que trabalham com persistencia de dados.
       col_2: 'Exemplo:<br /> `...UserRepository extends CommonsRepository<UserModel> {...}`<br /><br />`let user = new UserModel();`<br /><br />`userRepository.findById(user.id, UserModel)`<br />`userRepository.save(user)`<br />`userRepository.update(user, {id: user.id})`<br />`userRepository.deleteById(user.id)`'
 
 
