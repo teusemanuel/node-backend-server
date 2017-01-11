@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/node-backend-server/pt/assets/css/style.css?v=51f0471a758bcaac5bffea1a1a78ab12c448d406">
+    <link rel="stylesheet" href="/node-backend-server/pt/assets/css/style.css?v=6e9ea18992528aed423a25353980030e6c5aa27a">
 </head>
 <body>
 <section class="page-header">
@@ -21,7 +21,7 @@
     
 </section>
 
-<section class="main-content">
+<section class="main-content" style="max-width: 100rem;">
     <p style="float: right;"><a href="/node-backend-server/" alt="Mudar para o idioma ingles" title="Mudar para o idioma ingles"><img src="/node-backend-server/images/us.png" alt="Mudar para o idioma ingles" style="width: 30px;"></a></p>
     <h1 id="usar-servidor-existente-criado-com-o-exemplo">Usar servidor existente criado com o exemplo</h1>
 
@@ -124,7 +124,7 @@
 <h2 id="componentes">Componentes</h2>
 <p>Componentes utilitarios para auxiliar durante a criação das regras de negocio do seu servidor</p>
 
-<p>Utilitarios</p>
+<p><strong>Utilitarios</strong></p>
 
 <table>
   <thead>
@@ -137,8 +137,13 @@
   <tbody>
     <tr>
       <td>DateUtils</td>
-      <td>DateUtils não é apenas simplificar o código para operações comuns, mas isolar a dependência do momento.</td>
+      <td>DateUtils não é apenas simplificar o código para operações comuns, mas isolar a dependência do moment.</td>
       <td><code class="highlighter-rouge">DateUtils.dateTextFromDate()</code></td>
+    </tr>
+    <tr>
+      <td>CommonsRepository</td>
+      <td>CommonsRepository é uma classe utilitaria que pode ser utilizada por todas as classes que trabalham com persistencia de dados.</td>
+      <td>Exemplo:<br /> <code class="highlighter-rouge">@Service()</code><br /><code class="highlighter-rouge">...UserRepository extends CommonsRepository&lt;UserModel&gt; {...}</code><br /><br /><code class="highlighter-rouge">let user = new UserModel();</code><br /><br /><code class="highlighter-rouge">userRepository.findById(user.id, UserModel)</code><br /><code class="highlighter-rouge">userRepository.save(user)</code><br /><code class="highlighter-rouge">userRepository.update(user, {id: user.id})</code><br /><code class="highlighter-rouge">userRepository.deleteById(user.id)</code></td>
     </tr>
   </tbody>
 </table>

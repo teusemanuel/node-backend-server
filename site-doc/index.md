@@ -77,11 +77,12 @@ languageLink: header.languageLink
 ## {% t index.components.title %}
 {% t index.components.description %}
 
-{% t index.components.utils.title %}
+**{% t index.components.utils.title %}**
 
 | {% t index.components.tableClass %} | {% t index.components.tableDescription %} | {% t index.components.tableUsage %} |
 | ----------------------------------  | ----------------------------------------- | ----------------------------------- |
 | {% t index.components.utils.row_0.col_0 %} | {% t index.components.utils.row_0.col_1 %} | `DateUtils.dateTextFromDate()` |
+| {% t index.components.utils.row_1.col_0 %} | {% t index.components.utils.row_1.col_1 %} |  {% t index.components.utils.row_1.col_2 %} |
 
 ## {% t index.codeStructure.title %}
 {% t index.codeStructure.description %}

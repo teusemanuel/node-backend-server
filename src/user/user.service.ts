@@ -15,7 +15,7 @@ export class UserService implements IService<UserModel> {
     _userDAO: UserRepository;
 
     create(user:UserModel) {
-        return this._userDAO.create(user);
+        return this._userDAO.save(user);
     }
 
     update(user:UserModel) {

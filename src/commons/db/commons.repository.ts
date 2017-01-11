@@ -17,7 +17,7 @@ export abstract class CommonsRepository<T> {
         return this._db.queryFirstTyped(`SELECT * FROM ${this.tableName()} where id = :id`, { id: id }, type );
     }
 
-    public create(object: T): Promise<T> {
+    public save(object: T): Promise<T> {
         let sql = `INSERT INTO ${this.tableName()} ( `;
         let keys: string[] = this._keysByObject(object);
         let valuesSql: string = '';

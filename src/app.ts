@@ -43,7 +43,7 @@ class Server {
      * @constructor
      */
     constructor() {
-        //create expressjs application
+        //save expressjs application
         //////////////////////////////
         this.app = express();
 

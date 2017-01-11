@@ -47,7 +47,7 @@ export class Database {
              this.state.mode = mode;
              
              if(!this.state.pool) 
-                 reject(new Error("Error: Error on create Connection. Pool Not created"));
+                 reject(new Error("Error: Error on save Connection. Pool Not created"));
              else 
                  resolve(this.state);
          });

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/node-backend-server/assets/css/style.css?v=51f0471a758bcaac5bffea1a1a78ab12c448d406">
+    <link rel="stylesheet" href="/node-backend-server/assets/css/style.css?v=6e9ea18992528aed423a25353980030e6c5aa27a">
 </head>
 <body>
 <section class="page-header">
@@ -21,7 +21,7 @@
     
 </section>
 
-<section class="main-content">
+<section class="main-content" style="max-width: 100rem;">
     <p style="float: right;"><a href="pt/" alt="Change to Portuguese language" title="Change to Portuguese language"><img src="/node-backend-server/images/br.png" alt="Change to Portuguese language" style="width: 30px;"></a></p>
     <h1 id="use-existing-server-created-with-example">Use existing server created with example</h1>
 
@@ -124,7 +124,7 @@
 <h2 id="components">Components</h2>
 <p>Utility components to assist in creating your server’s business rules</p>
 
-<p>Utils</p>
+<p><strong>Utils</strong></p>
 
 <table>
   <thead>
@@ -139,6 +139,11 @@
       <td>DateUtils</td>
       <td>DateUtils is not only simplify code for common operations, but isolate from of the moment dependence.</td>
       <td><code class="highlighter-rouge">DateUtils.dateTextFromDate()</code></td>
+    </tr>
+    <tr>
+      <td>CommonsRepository</td>
+      <td>CommonsRepository is not only simplify code for common operations, but isolate from of the moment dependence.</td>
+      <td>Example:<br /> <code class="highlighter-rouge">@Service()</code><br /><code class="highlighter-rouge">...UserRepository extends CommonsRepository&lt;UserModel&gt; {...}</code><br /><br /><code class="highlighter-rouge">let user = new UserModel();</code><br /><br /><code class="highlighter-rouge">userRepository.findById(user.id, UserModel)</code><br /><code class="highlighter-rouge">userRepository.save(user)</code><br /><code class="highlighter-rouge">userRepository.update(user, {id: user.id})</code><br /><code class="highlighter-rouge">userRepository.deleteById(user.id)</code></td>
     </tr>
   </tbody>
 </table>

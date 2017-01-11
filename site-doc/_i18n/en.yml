@@ -54,6 +54,10 @@ index:
     row_0:
       col_0: DateUtils
       col_1: DateUtils is not only simplify code for common operations, but isolate from of the moment dependence.
+    row_1:
+      col_0: CommonsRepository
+      col_1: CommonsRepository is not only simplify code for common operations, but isolate from of the moment dependence.
+      col_2: 'Example:<br /> `...UserRepository extends CommonsRepository<UserModel> {...}`<br /><br />`let user = new UserModel();`<br /><br />`userRepository.findById(user.id, UserModel)`<br />`userRepository.save(user)`<br />`userRepository.update(user, {id: user.id})`<br />`userRepository.deleteById(user.id)`'
 
 
   codeStructure:
